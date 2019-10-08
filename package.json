@@ -1,10 +1,23 @@
 {
   "name": "material-ui-collapse-menu",
   "version": "1.0.0",
-  "description": "",
-  "author": "nadimsheikh07",
+  "description": "material-ui collapse menu",
+  "keywords": [
+    "react",
+    "redux",
+    "material",
+    "material-design",
+    "material-ui",
+    "mui",
+    "collapse",
+    "material-ui-collapse-menu"
+  ],
+  "author": "nadim sheikh (nadim.sheikh.07@gmail.com)",
   "license": "MIT",
-  "repository": "nadimsheikh07/material-ui-collapse-menu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadimsheikh07/material-ui-collapse-menu.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
