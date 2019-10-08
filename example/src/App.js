@@ -1,13 +1,62 @@
 import React, { Component } from 'react'
-
-import ExampleComponent from 'material-ui-collapse-menu'
+import { BrowserRouter as Router } from 'react-router-dom'
+import MaterialUICollapseMenu from 'material-ui-collapse-menu'
 
 export default class App extends Component {
-  render () {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      items: [
+        {
+          "id": 1,
+          "title": "",
+          "items": [
+            {
+              "id": "dashboard",
+              "name": "Dashboard",
+              "link": "/dashboard"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "",
+          "items": [
+            {
+              "id": "catalog",
+              "name": "Catalog",
+              "subitems": [
+                {
+                  "id": "article",
+                  "name": "Articles List",
+                  "link": "/article"
+                },
+                {
+                  "id": "article",
+                  "name": "Articles",
+                  "subitems": [
+                    {
+                      "id": "articles-form",
+                      "name": "Articles Form",
+                      "link": "/article/form/new"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+
+  render() {
+    const { items } = this.state
     return (
-      <div>
-        <ExampleComponent text='Modern React component module' />
-      </div>
+      <Router basename='/app'>
+        <MaterialUICollapseMenu items={items} />
+      </Router>
     )
   }
 }

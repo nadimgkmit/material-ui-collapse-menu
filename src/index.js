@@ -1,22 +1,60 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import ListSubheader from '@material-ui/core/ListSubheader'
+import List from '@material-ui/core/List'
+import Divider from '@material-ui/core/Divider'
+import { withRouter } from 'react-router';
+import MenuCollapse from './menuCollapse'
+import MenuNode from './menuNode'
 
-import styles from './styles.css'
+const useStyles = (theme => ({
+  nested: {
+    paddingLeft: theme.spacing(4),
+  }
+}));
 
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
+
+class MaterialUICollapseMenu extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { menu: [] };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    const { menu } = this.state;
+    menu[e] = !menu[e];
+    this.setState({ menu });
   }
 
   render() {
-    const {
-      text
-    } = this.props
-
+    const { menu } = this.state;
+    const { items, classes } = this.props;
     return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
+      <React.Fragment>
+        {items.map((list, listIndex) => {
+          return (
+            <List className={classes.root} key={`list${listIndex}`} subheader={<ListSubheader>{list.title}</ListSubheader>}>
+              {list.items.map((item, itemIndex) => {
+                return (
+                  <div key={`listItemStart${itemIndex}`}>
+                    {item.subitems != null ? (
+                      <MenuCollapse menu={menu} item={item} handleClick={this.handleClick} />
+                    ) :
+                      (<MenuNode key={`MenuNode${item.id}`} data={item} />)
+                    }
+                  </div>
+                );
+              })}
+              <Divider key={`Divider${listIndex}`} absolute />
+            </List>
+          );
+        })}
+      </React.Fragment>
     )
   }
 }
+
+
+export default withRouter(withStyles(useStyles)(MaterialUICollapseMenu));
