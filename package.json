@@ -73,5 +73,13 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/nadimsheikh07/material-ui-collapse-menu/issues"
+  },
+  "homepage": "https://github.com/nadimsheikh07/material-ui-collapse-menu#readme",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {}
 }
