@@ -8,6 +8,7 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import MenuNode from './menuNode';
 import { withRouter } from 'react-router';
+import Icon from '@material-ui/core/Icon';
 
 const useStyles = (theme => ({
     nested: {
@@ -54,7 +55,7 @@ class MenuCollapse extends React.Component {
         return (
             <React.Fragment>
                 <ListItem button onClick={() => { handleClick(item.id) }} className={nested ? classes.nested : ''}>
-                    <ListItemText primary={item.name} />
+                    {item.icon && <Icon>{item.icon}</Icon>}  <ListItemText primary={item.name} />
                     {menu[item.id] ? (<ExpandLess />) : (<ExpandMore />)}
                 </ListItem>
                 <Collapse

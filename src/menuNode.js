@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { NavLink } from 'react-router-dom';
+import Icon from '@material-ui/core/Icon';
 
 const useStyles = (theme => ({
     nested: {
@@ -22,7 +23,7 @@ class MenuNode extends React.Component {
 
     render() {
         const { classes, nested, subNested } = this.props;
-        const { name, link } = this.props.data;
+        const { name, icon, link } = this.props.data;
         let nestedClass = '';
         if (nested) {
             nestedClass = classes.nested
@@ -35,7 +36,7 @@ class MenuNode extends React.Component {
         return (
             <React.Fragment>
                 <ListItem button component={NavLink} to={link} className={nestedClass} exact>
-                    <ListItemText primary={name} />
+                    {icon && <Icon>{icon}</Icon>} <ListItemText primary={name} />
                 </ListItem>
             </React.Fragment>
         );
