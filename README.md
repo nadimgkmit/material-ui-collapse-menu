@@ -29,6 +29,7 @@ export default class App extends Component {
           "items": [
             {
               "id": "dashboard",
+              "icon": "dashboard",
               "name": "Dashboard",
               "link": "/dashboard"
             }
@@ -40,19 +41,23 @@ export default class App extends Component {
           "items": [
             {
               "id": "catalog",
+              "icon": "",
               "name": "Catalog",
               "subitems": [
                 {
                   "id": "article",
+                  "icon": "star",
                   "name": "Articles List",
                   "link": "/article"
                 },
                 {
                   "id": "article",
+                  "icon": "",
                   "name": "Articles",
                   "subitems": [
                     {
                       "id": "articles-form",
+                      "icon": "add_circle",
                       "name": "Articles Form",
                       "link": "/article/form/new"
                     }
@@ -65,7 +70,7 @@ export default class App extends Component {
       ]
     }
   }
-  
+
   render() {
     const { items } = this.state
     return (
@@ -75,6 +80,7 @@ export default class App extends Component {
     )
   }
 }
+
 
 ```
 
