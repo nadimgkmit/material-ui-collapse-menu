@@ -84,6 +84,9 @@ export default class App extends Component {
 
 ```
 
+[Demo] (https://stackblitz.com/edit/material-ui-collapse-menu-demo)
+
+
 ## License
 
 MIT © [nadimsheikh07](https://github.com/nadimsheikh07)
