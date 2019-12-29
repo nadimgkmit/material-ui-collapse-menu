@@ -2,9 +2,6 @@
   "name": "material-ui-collapse-menu",
   "version": "1.1.1",
   "description": "material-ui collapse menu",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "keywords": [
     "react",
     "redux",
@@ -20,6 +17,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nadimsheikh07/material-ui-collapse-menu.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
